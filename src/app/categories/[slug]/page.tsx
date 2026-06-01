@@ -7,15 +7,15 @@ import Footer              from "@/components/layout/Footer";
 
 interface Props { params: { slug: string } }
 
-export function generateStaticParams() {
+export async function generateStaticParams() {
   return categoryService.getAll().map((c) => ({ slug: c.slug }));
 }
 
-export default function CategoryPage({ params }: Props) {
+export default async function CategoryPage({ params }: Props) {
   const category = categoryService.getBySlug(params.slug);
   if (!category) notFound();
 
-  const products = productService.getByCategory(params.slug);
+  const products = await productService.getByCategory(params.slug);
 
   return (
     <>

@@ -19,17 +19,16 @@ const ACCENTS: Record<string, { bg: string; text: string; border: string; tag: s
   "vampire-goth":    { bg: "bg-zinc-900",  text: "text-red-400",    border: "border-zinc-700",  tag: "bg-red-900 text-red-300"    },
 };
 
-export default function CollectionPage({ params }: Props) {
+export default async function CollectionPage({ params }: Props) {
   const collection = collectionService.getBySlug(params.slug);
   if (!collection) notFound();
 
-  const products   = productService.getByCollection(params.slug);
+  const products   = await productService.getByCollection(params.slug);
   const accent     = ACCENTS[params.slug] ?? ACCENTS["angelic-silvery"];
   const isGoth     = params.slug === "vampire-goth";
 
   // Agrupar productos por categoría
-  const byCategory = products.reduce<Record<string, typeof products>>((acc, p) => {
-    acc[p.categorySlug] = acc[p.categorySlug] ?? [];
+  const byCategory = products.reduce<Record<string, any>>((acc: Record<string, any>, p: any) => {    acc[p.categorySlug] = acc[p.categorySlug] ?? [];
     acc[p.categorySlug].push(p);
     return acc;
   }, {});

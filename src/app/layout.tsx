@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Playfair_Display, DM_Sans } from "next/font/google";
 import "./globals.css";
 import { CartProvider } from "@/hooks/CartContext";
+import { AuthProvider } from "@/hooks/AuthContext";
 import Navbar from "@/components/layout/Navbar";
 import CartDrawer from "@/components/layout/CartDrawer";
 import Marquee from "@/components/ui/Marquee";
@@ -28,12 +29,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="es" className={`${playfair.variable} ${dmSans.variable}`}>
       <body className="bg-cream font-body text-ink">
-        <CartProvider>
-          <Navbar />
-          <Marquee />
-          <main className="pt-[60px]">{children}</main>
-          <CartDrawer />
-        </CartProvider>
+        <AuthProvider>
+          <CartProvider>
+            <Navbar />
+            <Marquee />
+            <main className="pt-[60px]">{children}</main>
+            <CartDrawer />
+          </CartProvider>
+        </AuthProvider>
       </body>
     </html>
   );

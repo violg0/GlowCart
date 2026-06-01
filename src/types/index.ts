@@ -10,6 +10,7 @@ export interface Product {
   badge?: "Nuevo" | "Limitado" | "Oferta" | "";
   isBestSeller?: boolean;
   isNew?: boolean;
+  createdAt?: Date;
 }
 
 export interface Category {
@@ -42,3 +43,13 @@ export interface Cart {
   total: number;
   itemCount: number;
 }
+
+export type PaginatedResponse<T> = {
+  data: T[];
+  meta: {
+    page: number;
+    limit: number;
+    total: number;
+    totalPages: number;
+  };
+};

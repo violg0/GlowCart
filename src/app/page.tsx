@@ -8,10 +8,10 @@ import CollectionCard   from "@/components/shop/CollectionCard";
 import HorizontalCarousel from "@/components/ui/HorizontalCarousel";
 import Footer           from "@/components/layout/Footer";
 
-export default function HomePage() {
+export default async function HomePage() {
   const categories   = categoryService.getAll();
-  const bestSellers  = productService.getBestSellers();
-  const newProducts  = productService.getNew();
+  const bestSellers  = await productService.getBestSellers();
+  const newProducts  = await productService.getNew();
   const collections  = collectionService.getAll();
 
   return (
