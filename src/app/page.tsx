@@ -10,8 +10,15 @@ import Footer           from "@/components/layout/Footer";
 
 export default async function HomePage() {
   const categories   = categoryService.getAll();
-  const bestSellers  = await productService.getBestSellers();
-  const newProducts  = await productService.getNew();
+  let bestSellers: any[] = [];
+  let newProducts: any[] = [];
+  try {
+    bestSellers = await productService.getBestSellers();
+    newProducts = await productService.getNew();
+  } catch {
+    bestSellers = [];
+    newProducts = [];
+  }
   const collections  = collectionService.getAll();
 
   return (

@@ -15,7 +15,12 @@ export default async function CategoryPage({ params }: Props) {
   const category = categoryService.getBySlug(params.slug);
   if (!category) notFound();
 
-  const products = await productService.getByCategory(params.slug);
+  let products: any[] = [];
+try {
+  products = await productService.getByCategory(params.slug);
+} catch {
+  products = [];
+}
 
   return (
     <>

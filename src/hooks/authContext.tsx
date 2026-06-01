@@ -47,6 +47,20 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     setIsLoading(false);
   }, []);
 
+    useEffect(() => {
+    const interceptFetch = window.fetch;
+    window.fetch = async (...args) => {
+      const res = await interceptFetch(...args);
+      if (res.status === 401) {
+        localStorage.removeItem("glow-token");
+        setToken(null);
+        setAdmin(null);
+        router.push("/login");
+      }
+      return res;
+    };
+  }, []);
+
   const login = async (email: string, password: string) => {
     const res = await fetch(`${API_URL}/auth/login`, {
       method: "POST",
