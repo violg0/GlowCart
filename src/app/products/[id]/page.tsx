@@ -7,11 +7,7 @@ interface Props {
   params: { id: string };
 }
 
-export async function generateStaticParams() {
-  const response = await productService.getAll();
-  const products: any[] = (response as any)?.data || [];
-  return products.map((p) => ({ id: p.id }));
-}
+export const dynamic = "force-dynamic";
 
 export default async function ProductPage({ params }: Props) {
   const product = await productService.getById(params.id);
