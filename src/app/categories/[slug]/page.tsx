@@ -7,9 +7,7 @@ import Footer              from "@/components/layout/Footer";
 
 interface Props { params: { slug: string } }
 
-export async function generateStaticParams() {
-  return categoryService.getAll().map((c) => ({ slug: c.slug }));
-}
+export const dynamic = "force-dynamic"
 
 export default async function CategoryPage({ params }: Props) {
   const category = categoryService.getBySlug(params.slug);

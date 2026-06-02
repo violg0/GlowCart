@@ -8,9 +8,11 @@ import Footer                 from "@/components/layout/Footer";
 
 interface Props { params: { slug: string } }
 
-export function generateStaticParams() {
-  return collectionService.getAll().map((c) => ({ slug: c.slug }));
-}
+//export function generateStaticParams() {
+  //return collectionService.getAll().map((c) => ({ slug: c.slug }));
+//}
+
+export const dynamic = "force-dynamic"
 
 // Paletas de acento por colección
 const ACCENTS: Record<string, { bg: string; text: string; border: string; tag: string }> = {
