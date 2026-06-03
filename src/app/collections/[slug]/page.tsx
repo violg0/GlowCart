@@ -55,7 +55,7 @@ export default async function CollectionPage({ params }: Props) {
       </div>
 
       {/* Breadcrumb */}
-      <div className="max-w-[1200px] mx-auto px-10 pt-10">
+      <div className="max-w-[1200px] mx-auto px-5 pt-10">
         <nav className={`flex items-center gap-2 text-[11px] tracking-[1px] uppercase mb-10 ${isGoth ? "text-zinc-500" : "text-ink-muted"}`}>
           <Link href="/" className="hover:text-rose-deep transition-colors">Inicio</Link>
           <span>›</span>

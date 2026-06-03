@@ -53,7 +53,7 @@ try {
             <p className="font-display text-2xl font-light italic text-ink-muted">Próximamente…</p>
           </div>
         ) : (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-px bg-silver-mid border border-silver-mid">
+          <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 bg-silver-mid border border-silver-mid">
             {products.map((product) => (
               <ProductCard key={product.id} product={product} />
             ))}

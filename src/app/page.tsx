@@ -24,20 +24,25 @@ export default async function HomePage() {
   return (
     <>
       {/* ── HERO ────────────────────────────────────────────────────────── */}
-      <section className="relative min-h-[88vh] flex flex-col items-center justify-center text-center px-8 py-20 overflow-hidden bg-gradient-to-br from-[#fdf0f5] via-[#fdf6f0] to-[#f0eaf8]">
-        <span className="absolute font-display text-[280px] font-light italic text-rose-mid/10 pointer-events-none select-none leading-none left-[-80px] bottom-[-40px]">✦</span>
-        <span className="absolute font-display text-[280px] font-light italic text-rose-mid/10 pointer-events-none select-none leading-none right-[-80px] top-[-20px]">✦</span>
+        <section className="relative min-h-[88vh] flex flex-col items-center justify-center text-center px-8 py-20 overflow-hidden">
+        <img 
+          src="/images/accesorios.jfif"
+          alt="Hero" className="absolute inset-0 w-full h-full object-cover" />
+        <div className="absolute inset-0 bg-gradient-to-br from-[#fdf0f5]/80 via-[#fdf6f0]/50 to-[#f0eaf8]/60" />
+        
+        <span className="absolute z-10 font-display text-[280px] font-light italic text-rose-mid/10 pointer-events-none select-none leading-none left-[-80px] bottom-[-40px]">✦</span>
+        <span className="absolute z-10 font-display text-[280px] font-light italic text-rose-mid/10 pointer-events-none select-none leading-none right-[-80px] top-[-20px]">✦</span>
 
-        <p className="text-[10px] tracking-[4px] uppercase text-rose-dark mb-6 animate-fade-up">
+        <p className="z-10 text-[10px] tracking-[4px] uppercase text-rose-dark mb-6 animate-fade-up">
           Colecciones · Angelic · Neapolitan · Vampire Goth
         </p>
-        <h1 className="font-display text-[clamp(48px,7vw,84px)] font-light leading-[1.05] text-ink mb-5 animate-fade-up">
+        <h1 className="z-10 font-display text-[clamp(48px,7vw,84px)] font-light leading-[1.05] text-ink mb-5 animate-fade-up">
           Accesorios<br />con <em className="text-rose-deep">identidad</em>
         </h1>
-        <p className="text-[14px] text-ink-muted leading-relaxed max-w-[400px] mb-10 animate-fade-up">
+        <p className="z-10 text-[14px] text-ink-muted leading-relaxed max-w-[400px] mb-10 animate-fade-up">
           Cada pieza cuenta una historia. Explora nuestras colecciones y encuentra la tuya.
         </p>
-        <div className="flex gap-4 animate-fade-up">
+        <div className="z-10 flex gap-4 animate-fade-up">
           <Link href="#best-sellers" className="inline-flex items-center gap-3 bg-ink text-cream px-8 py-3.5 text-[11px] tracking-[2.5px] uppercase hover:bg-rose-deep transition-colors">
             Explorar ↓
           </Link>
@@ -46,7 +51,7 @@ export default async function HomePage() {
           </Link>
         </div>
 
-        <div className="absolute bottom-10 flex gap-12">
+        <div className="z-10 absolute bottom-10 flex gap-12">
           {[["50+", "Productos"], ["3", "Colecciones"], ["7", "Categorías"]].map(([n, l]) => (
             <div key={l} className="text-center">
               <div className="font-display text-[26px] font-light text-rose-deep">{n}</div>
