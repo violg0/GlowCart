@@ -216,7 +216,7 @@ useEffect(() => {
                     </div>
                   </td>
                   <td className="px-4 py-3 font-medium max-w-[160px] truncate">{p.name}</td>
-                  <td className="px-4 py-3 font-display text-[15px] text-rose-deep font-light">₩{p.price.toLocaleString()}</td>
+                  <td className="px-4 py-3 font-display text-[15px] text-rose-deep font-light">${p.price.toLocaleString()}</td>
                   <td className="px-4 py-3 text-ink-muted text-[12px]">{p.categorySlug}</td>
                   <td className="px-4 py-3 text-ink-muted text-[12px]">{p.collectionSlug || "—"}</td>
                   <td className="px-4 py-3 text-[12px]">{p.stock}</td>

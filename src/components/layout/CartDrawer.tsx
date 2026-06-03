@@ -37,14 +37,14 @@ export default function CartDrawer() {
                   {/* Info */}
                   <div className="flex-1 min-w-0">
                     <p className="text-[13px] text-ink leading-snug mb-1 truncate font-medium">{product.name}</p>
-                    <p className="font-display text-[17px] font-light text-rose-deep">₩{product.price.toLocaleString()}</p>
+                    <p className="font-display text-[17px] font-light text-rose-deep">${product.price.toLocaleString()}</p>
 
                     {/* Qty */}
                     <div className="flex items-center gap-3 mt-2">
                       <button onClick={() => updateQuantity(product.id, quantity - 1)} className="w-6 h-6 border border-silver-mid flex items-center justify-center text-ink-light hover:bg-rose hover:border-rose-dark transition-colors text-sm">−</button>
                       <span className="text-[13px] text-ink min-w-[20px] text-center">{quantity}</span>
                       <button onClick={() => updateQuantity(product.id, quantity + 1)} className="w-6 h-6 border border-silver-mid flex items-center justify-center text-ink-light hover:bg-rose hover:border-rose-dark transition-colors text-sm">+</button>
-                      <span className="text-[11px] text-ink-muted ml-2">= ₩{(product.price * quantity).toLocaleString()}</span>
+                      <span className="text-[11px] text-ink-muted ml-2">= ${(product.price * quantity).toLocaleString()}</span>
                     </div>
                   </div>
 
@@ -61,7 +61,7 @@ export default function CartDrawer() {
           <div className="px-7 py-6 border-t border-rose-mid bg-silver/40">
             <div className="flex justify-between text-[12px] text-ink-muted mb-2">
               <span>{cart.itemCount} producto{cart.itemCount !== 1 ? "s" : ""}</span>
-              <span>₩{cart.total.toLocaleString()}</span>
+              <span>${cart.total.toLocaleString()}</span>
             </div>
             <div className="flex justify-between text-[12px] text-ink-muted mb-2">
               <span>Envío</span>
@@ -70,7 +70,7 @@ export default function CartDrawer() {
             <div className="h-px bg-rose-mid my-3" />
             <div className="flex justify-between font-display text-2xl font-light mb-5">
               <span>Total</span>
-              <span className="text-rose-deep">₩{cart.total.toLocaleString()}</span>
+              <span className="text-rose-deep">${cart.total.toLocaleString()}</span>
             </div>
             <button className="w-full py-4 bg-rose-deep text-white text-[11px] tracking-[2.5px] uppercase hover:bg-ink transition-colors mb-3">
               Proceder al pago

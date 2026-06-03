@@ -36,7 +36,7 @@ try {
         </div>
       </div>
 
-      <div className="max-w-[1200px] mx-auto px-10 py-10">
+      <div className="max-w-[1200px] mx-auto px-5 py-10">
         {/* Breadcrumb */}
         <nav className="flex items-center gap-2 text-[11px] tracking-[1px] uppercase text-ink-muted mb-8">
           <Link href="/" className="hover:text-rose-deep transition-colors">Inicio</Link>

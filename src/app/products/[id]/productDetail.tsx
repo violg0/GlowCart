@@ -130,7 +130,7 @@ export default function ProductDetail({ product, collection, similar }: Props) {
             {/* Precio */}
             <div className="mb-6">
               <span className="font-display text-[35px] font-light text-rose-deep leading-none">
-                ₩{product.price.toLocaleString()}
+                ${product.price.toLocaleString()}
               </span>
               <p className="text-[10px] text-ink-muted mt-1.5 tracking-[1px] uppercase">
                 Envío calculado al finalizar la compra
@@ -187,7 +187,7 @@ export default function ProductDetail({ product, collection, similar }: Props) {
               {added
                 ? "✓ Añadido al carrito"
                 : inStock
-                ? `Añadir al carrito · ₩${(product.price * qty).toLocaleString()}`
+                ? `Añadir al carrito · ${(product.price * qty).toLocaleString()}`
                 : "Sin stock"}
             </button>
 

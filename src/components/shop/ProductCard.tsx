@@ -43,7 +43,7 @@ export default function ProductCard({ product, compact = false }: Props) {
       {/* Precio + botón FUERA del link */}
       <div className="px-4 pb-4 flex items-center justify-between mt-auto pt-2">
         <span className="font-display text-[19px] text-rose-deep font-light">
-          ₩{product.price.toLocaleString()}
+          ${product.price.toLocaleString()}
         </span>
         <button
           onClick={() => addItem(product)}
